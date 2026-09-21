@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-개발 서버: <http://localhost:3000>
+개발 서버 주소는 실행 시 터미널에 표시됩니다.
 
 ## 화면 구성
 
