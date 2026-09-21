@@ -37,6 +37,10 @@ npm run dev
 
 데이터 소스: 로컬 fixture. API·Supabase 미연동.
 
+## 배포 계획
+
+GitHub 저장소를 Vercel에 연결해 배포할 예정입니다. 배포 주소가 생성되면 이 문서에 추가합니다.
+
 ## 검증
 
 검증 명령: `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run build`.
