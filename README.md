@@ -25,7 +25,6 @@ npm run dev
 - `src/components/statistics.tsx`: 통계 화면
 - `src/lib/fixture.ts`: 데이터 타입과 테스트 fixture
 - `src/app/globals.css`: Tailwind CSS와 공통 디자인 규칙
-- `images/`: 디자인 참고 이미지
 
 ## 기술 구성
 
