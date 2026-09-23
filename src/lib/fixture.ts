@@ -191,6 +191,28 @@ export const platforms: Platform[] = [
     featured: true,
     description: '공개 커뮤니티 플랫폼입니다.',
   },
+  {
+    id: 'xianyu',
+    name: '시엔위',
+    aliases: ['Xianyu', '闲鱼'],
+    category: 'community',
+    x: 547,
+    y: 400,
+    domain: 'goofish.com',
+    featured: true,
+    description: '중고 물품을 거래하고 이용자가 정보를 나누는 공개 플랫폼입니다.',
+  },
+  {
+    id: 'taobao',
+    name: '타오바오',
+    aliases: ['Taobao', '淘宝'],
+    category: 'community',
+    x: 607,
+    y: 399,
+    domain: 'taobao.com',
+    featured: true,
+    description: '판매자와 이용자가 상품 정보를 공유하는 공개 쇼핑 플랫폼입니다.',
+  },
 ];
 
 export const relations: Relation[] = [

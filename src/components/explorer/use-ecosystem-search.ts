@@ -33,7 +33,9 @@ export function useEcosystemSearch({ onSelectCategory, onSelectPlatform }: Optio
       .filter((item) =>
         !normalized
           ? item.featured
-          : `${item.name} ${item.domain}`.toLocaleLowerCase().includes(normalized),
+          : `${item.name} ${item.domain} ${item.aliases?.join(' ') ?? ''}`
+              .toLocaleLowerCase()
+              .includes(normalized),
       )
       .map((item) => ({
         key: `p-${item.id}`,

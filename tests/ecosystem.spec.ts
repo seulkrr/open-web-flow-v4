@@ -122,6 +122,31 @@ test('candidate relations remain unverified when selected, and search handles no
   expect(errors).toEqual([]);
 });
 
+test('community shows Xianyu and Taobao without inventing incidents', async ({ page }) => {
+  await openMap(page);
+  const xianyu = page.getByRole('button', { name: '시엔위 영토 선택', exact: true });
+  const taobao = page.getByRole('button', { name: '타오바오 영토 선택', exact: true });
+  await expect(xianyu).toBeVisible();
+  await expect(taobao).toBeVisible();
+  const xianyuBox = (await xianyu.boundingBox())!;
+  const taobaoBox = (await taobao.boundingBox())!;
+  expect(xianyuBox.x + xianyuBox.width).toBeLessThan(taobaoBox.x);
+
+  await xianyu.click();
+  const details = page.getByRole('complementary', { name: '시엔위 상세 패널' });
+  await expect(details).toBeVisible();
+  await expect(details.getByText('goofish.com')).toBeVisible();
+  await details.getByRole('tab', { name: '사건 0', exact: true }).click();
+  await expect(details.getByText('이 기간에 등록된 사건이 없습니다.')).toBeVisible();
+
+  await page.getByRole('combobox').fill('Taobao');
+  await page.getByRole('option', { name: /타오바오/ }).click();
+  const taobaoDetails = page.getByRole('complementary', { name: '타오바오 상세 패널' });
+  await expect(taobaoDetails).toBeVisible();
+  await expect(taobaoDetails.getByText('taobao.com')).toBeVisible();
+  await expect(taobaoDetails.getByRole('tab', { name: '사건 0', exact: true })).toBeVisible();
+});
+
 test('statistics selection opens its own platform and mobile has no horizontal overflow', async ({
   page,
 }) => {

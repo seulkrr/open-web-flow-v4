@@ -29,6 +29,7 @@ export interface Category {
 export interface Platform {
   id: string;
   name: string;
+  aliases?: string[];
   category: CategoryId;
   x: number;
   y: number;
